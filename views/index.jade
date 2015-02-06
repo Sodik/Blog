@@ -1,5 +1,11 @@
 extends layout
+include paging
 
 block content
-  h1= title
-  p Welcome to #{title}
+  ul(class="list-group")
+    each post in posts
+      li(class="list-group-item")
+        a(href="/post/#{post._id}") #{post.title}
+  mixin paging(pages, currentPage)
+  if authorized
+    a(href="/create-post" class="btn btn-success") Create

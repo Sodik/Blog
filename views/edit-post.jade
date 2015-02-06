@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(class="col-md-6")
+    form(class="form", action="/edit-post/#{post_id}", method="post")
+      h1 Edit post
+      div(class="row")
+        div(class="col-md-6 form-group")
+          input(type="text", name="title", class="form-control", value="#{title}")
+        div(class="col-md-6 form-group")
+          textarea(name="text", class="form-control") #{text}
+      input(type="submit", value="Submit", class="btn btn-success")

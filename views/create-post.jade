@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(class="col-md-6")
+    form(class="form post-form", action="/create-post", method="post")
+      h1 Create post
+      div(class="row")
+        div(class="col-md-6")
+          input(type="text", class="form-control", name="title")
+        div(class="col-md-6")
+          textarea(class="form-control", name="text")
+       input(type="submit", class="btn btn-primary", vlaue="Submit")

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div(cool-md-6)
+    form(method="post" action="/sign-up")
+      h1 Sign up
+      div(class="row")
+        div(class="col-md-6 form-group")
+          input(type="text", name="user-name", class="form-control")
+        div(class="col-md-6 form-group")
+          input(type="pasword", name="user-password", class="form-control")
+      input(type="submit", class="btn btn-primary", value="Submit")

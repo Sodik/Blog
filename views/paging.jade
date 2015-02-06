@@ -1,0 +1,22 @@
+mixin paging(pages, currentPage)
+  if pages
+    div(class="btn-group form-group" style="width: 100%")
+
+      - var page = Math.max(1, currentPage - 2)
+      - var offset = Math.min(page + 4, pages)
+
+      a(href="/?p=1" class="btn btn-danger") First
+
+      if page > 1
+        span(class="btn btn-default") ...
+
+      while page <= offset
+        if page === currentPage
+          span(class="btn btn-default") #{page++}
+        else
+          a(class="btn btn-success" href="/?p=#{page}") #{page++}
+
+      if currentPage < pages - 2
+        span(class="btn  btnd-defaukt") ...
+
+      a(href="/?p=#{pages}" class="btn btn-danger") Last

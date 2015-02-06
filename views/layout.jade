@@ -2,6 +2,11 @@ doctype html
 html
   head
     title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/javascripts/main.js')
   body
+    include header
+    mixin header(authorized)
     block content
